@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < 10; x++)
+        for (int x = 2; x < 10; x++)
         {
-            Instantiate(brickPrefab, new Vector2(x * xSpace + xOffset, 3), Quaternion.identity); Instantiate(brickPrefab,  new Vector2(x * xSpace + xOffset, 3), Quaternion.identity);
+            Instantiate(brickPrefab, new Vector2(x * xSpace + xOffset, 3), Quaternion.identity); 
             Instantiate(brickPrefab, new Vector2(x * xSpace + xOffset, 3.75f), Quaternion.identity);
             Instantiate(brickPrefab, new Vector2(x * xSpace + xOffset, 4.5f), Quaternion.identity);
         } 
