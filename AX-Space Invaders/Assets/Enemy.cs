@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public float speed;
     private Animator animator;
-    private Vector2 direction;
+    static private Vector2 direction;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,15 +25,26 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(direction * Time.deltaTime * speed);
 
-        if (transform.position.x > 8f)
+        if (transform.position.x > 12f)
         {
             direction = Vector2.left;
+            MoveDown();
         }
 
 
-        if (transform.position.x < -8f)
+        if (transform.position.x < -12f)
         {
             direction = Vector2.right;
+            MoveDown();
         }
+    
+    
     }
+    private void MoveDown()
+    {
+        foreach (Enemy enemy in FindObjectsOfType(typeof(Enemy)))
+        {
+            enemy.transform.Translate(Vector2.down);
+        }
+    } 
 }
