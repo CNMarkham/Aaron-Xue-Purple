@@ -23,19 +23,19 @@ public class ScreenWrap : MonoBehaviour
 
         if (x > screenMax.x)
         {
-
+            transform.position = new Vector2(screenMin.x, y);
         }
         if (x > screenMax.x)
         {
-
+            transform.position = new Vector2(screenMax.x, y);
         }
         if (x > screenMax.y)
         {
-
+            transform.position = new Vector2(x, screenMax. y);
         }
         if (x > screenMax.y)
         {
-
+            transform.position = new Vector2(x, screenMax.y);
         }
     }
 }
