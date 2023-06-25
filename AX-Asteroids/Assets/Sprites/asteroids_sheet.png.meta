@@ -141,8 +141,8 @@ TextureImporter:
       name: asteroids_sheet_5
       rect:
         serializedVersion: 2
-        x: 90
-        y: 59
+        x: 88
+        y: 62
         width: 98
         height: 108
       alignment: 0
@@ -190,21 +190,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      asteroids_sheet_4: -383238793
-      asteroids_sheet_0: 790415953
-      asteroids_sheet_8: 1577680314
+      asteroids_sheet_4: 790415953
+      asteroids_sheet_0: -2104204849
+      asteroids_sheet_8: -622178299
       asteroids_sheet_3: 1562925459
-      asteroids_sheet_6: -601921581
-      asteroids_sheet_14: -1248887729
-      asteroids_sheet_13: -344446300
+      asteroids_sheet_6: -383238793
+      asteroids_sheet_14: 675841189
+      asteroids_sheet_13: -601921581
       asteroids_sheet_7: -2005963593
-      bullet: -683177423
-      asteroids_sheet_11: 1089839929
-      asteroids_sheet_2: -622178299
-      asteroids_sheet_5: 675841189
-      asteroids_sheet_10: -2045702208
-      ship: -1882289240
-      asteroids_sheet_9: -1107096774
+      bullet: 1577680314
+      asteroids_sheet_11: -1107096774
+      asteroids_sheet_2: -2045702208
+      asteroids_sheet_5: 1089839929
+      asteroids_sheet_10: -1961875781
+      ship: -344446300
+      asteroids_sheet_9: -1248887729
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

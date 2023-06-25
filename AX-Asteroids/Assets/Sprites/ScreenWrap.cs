@@ -12,7 +12,7 @@ public class ScreenWrap : MonoBehaviour
     void Start()
     {
         screenMin = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
-        screenMin = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        screenMax = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     // Update is called once per frame
@@ -25,15 +25,15 @@ public class ScreenWrap : MonoBehaviour
         {
             transform.position = new Vector2(screenMin.x, y);
         }
-        if (x > screenMax.x)
+        if (x < screenMin.x)
         {
             transform.position = new Vector2(screenMax.x, y);
         }
-        if (x > screenMax.y)
+        if (y > screenMax.y)
         {
-            transform.position = new Vector2(x, screenMax. y);
+            transform.position = new Vector2(x, screenMin.y);
         }
-        if (x > screenMax.y)
+        if (y < screenMin.y)
         {
             transform.position = new Vector2(x, screenMax.y);
         }
