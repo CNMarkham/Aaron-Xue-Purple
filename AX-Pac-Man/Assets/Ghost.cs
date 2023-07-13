@@ -2,22 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pacman : Movement
+public class Ghost : Movement
 {
     protected override void ChildUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        if (horizontal != 0 || vertical != 0)
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Node node = collision.GetComponent<Node>();
+
+        if (node != null)
         {
-            SetDirection(new Vector2(horizontal, vertical));
+            int index = Random.Range(0, node.availableDirections.Count);
+
+
+
+            SetDirection(node.availableDirections[index]);
         }
-        transform.right = direction;
     }
     // Start is called before the first frame update
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
