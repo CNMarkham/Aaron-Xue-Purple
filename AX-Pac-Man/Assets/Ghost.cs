@@ -29,9 +29,5 @@ public class Ghost : Movement
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

@@ -8,21 +8,13 @@ public class Pacman : Movement
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        
         if (horizontal != 0 || vertical != 0)
         {
             SetDirection(new Vector2(horizontal, vertical));
+            Debug.Log(horizontal);
         }
         transform.right = direction;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

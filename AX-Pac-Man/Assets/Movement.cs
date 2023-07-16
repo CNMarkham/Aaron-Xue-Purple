@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    abstract protected void ChildUpdate();
+    
     public float speed;
     public Vector2 initialDirection;
     public LayerMask obstacleLayer;
@@ -17,10 +17,12 @@ public abstract class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        direction = initialDirection;
+        nextDirection = Vector2.zero;
     }
    
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (nextDirection != Vector2.zero)
         {
@@ -28,7 +30,7 @@ public abstract class Movement : MonoBehaviour
         }
         ChildUpdate(); 
     }
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         Vector2 position = rb.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
@@ -43,8 +45,10 @@ public abstract class Movement : MonoBehaviour
     }
     protected void SetDirection(Vector2 newDirection)
     {
+        
         if (!Occupied(newDirection))
         {
+            Debug.Log(newDirection);
             direction = newDirection;
             nextDirection = Vector2.zero;
         }
@@ -53,4 +57,5 @@ public abstract class Movement : MonoBehaviour
             nextDirection = newDirection;
         }
     }
+    abstract protected void ChildUpdate();
 }
