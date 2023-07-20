@@ -18,11 +18,11 @@ public abstract class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction = initialDirection;
-        nextDirection = Vector2.zero;
+        //nextDirection = Vector2.zero;
     }
    
     // Update is called once per frame
-    protected void Update()
+     void Update()
     {
         if (nextDirection != Vector2.zero)
         {

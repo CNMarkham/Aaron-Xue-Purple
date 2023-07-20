@@ -13,6 +13,7 @@ public class Pacman : Movement
         {
             SetDirection(new Vector2(horizontal, vertical));
             Debug.Log(horizontal);
+            Debug.Log(vertical);
         }
         transform.right = direction;
     }
