@@ -12,8 +12,8 @@ public class Pacman : Movement
         if (horizontal != 0 || vertical != 0)
         {
             SetDirection(new Vector2(horizontal, vertical));
-            Debug.Log(horizontal);
-            Debug.Log(vertical);
+            //Debug.Log(horizontal);
+           // Debug.Log(vertical);
         }
         transform.right = direction;
     }

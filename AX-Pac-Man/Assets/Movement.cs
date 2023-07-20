@@ -18,7 +18,7 @@ public abstract class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction = initialDirection;
-        //nextDirection = Vector2.zero;
+        nextDirection = Vector2.zero;
     }
    
     // Update is called once per frame
@@ -30,7 +30,7 @@ public abstract class Movement : MonoBehaviour
         }
         ChildUpdate(); 
     }
-    protected void FixedUpdate()
+    private void FixedUpdate()
     {
         Vector2 position = rb.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
