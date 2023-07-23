@@ -36,7 +36,6 @@ public abstract class Movement : MonoBehaviour
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
         rb.MovePosition(position + translation);
-
     }
     private bool Occupied(Vector2 newDirection)
     {

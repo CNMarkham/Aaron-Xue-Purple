@@ -365,6 +365,12 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
+  body: {fileID: 3408764002115044871}
+  eyes: {fileID: 3408764002374851411}
+  blue: {fileID: 3408764002109123630}
+  white: {fileID: 3408764003246901848}
+  atHome: 0
+  homeDuration: 0
 --- !u!1 &3408764003246901848
 GameObject:
   m_ObjectHideFlags: 0
