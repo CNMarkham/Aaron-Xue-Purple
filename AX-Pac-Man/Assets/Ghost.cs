@@ -12,6 +12,7 @@ public class Ghost : Movement
     public float homeDuration;
     private bool frightened;
 
+
     private void Awake()
     {
         body.SetActive(true);
