@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
         Jump();
 
-       
+        FlipDirection();
+       ChangeAnimations();
     }
     private void Jump()
     {
@@ -54,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+
+        else if (!Input.GetKey(KeyCode.Space))
+        {
+            jumping = false;
+        }
         if (jumping && Input.GetKey(KeyCode.Space))
         {
             Vector3 velocity = rb.velocity;
@@ -65,5 +71,21 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJumping()
     {
         jumping = false;
+    }
+    private void FlipDirection()
+    {
+        foreach (SpriteRenderer sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.flipX = rb.velocity.x < 0;
+        }
+    }
+    private void ChangeAnimations()
+    {
+        foreach (Animator animator in GetComponentsInChildren<Animator>())
+        {
+            animator.SetFloat("velocityX", rb.velocity.x);
+            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontal"));
+            animator.SetBool("inAir", hit.collider == null || jumping);
+        }
     }
 }
