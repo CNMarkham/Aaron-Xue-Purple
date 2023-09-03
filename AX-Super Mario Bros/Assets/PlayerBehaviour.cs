@@ -10,7 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     public SpriteRenderer bigRenderer;
     
     // Start is called before the first frame update
-  private void Start()
+    private void Start()
     {
         smallAnimator = smallRenderer.gameObject.GetComponent<Animator>();
         big = false;
@@ -21,7 +21,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (big)
         {
             Shrink();
-
         }
         else
         {
@@ -29,7 +28,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
     
-        private void Shrink()
+    private void Shrink()
     {
         smallRenderer.enabled = true;
         bigRenderer.enabled = false;
