@@ -1658,7 +1658,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.493156
+  orthographic size: 6.0577197
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1682,7 +1682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.27, y: 2.66, z: -10}
+  m_LocalPosition: {x: -38.7, y: 1.9, z: -10}
   m_LocalScale: {x: 2.6125, y: 1.9625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1715,7 +1715,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.973613, y: 0}
+  m_Offset: {x: -5.342101, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1726,7 +1726,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1127372, y: 20}
+  m_Size: {x: 0.8913021, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &521137458
 GameObject:
@@ -8206,11 +8206,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564474704944796432, guid: a374ebf54cf32e3458eaf8644ac8b2f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.97
+      value: -62.4
       objectReference: {fileID: 0}
     - target: {fileID: 8564474704944796432, guid: a374ebf54cf32e3458eaf8644ac8b2f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.83
+      value: 20.1
       objectReference: {fileID: 0}
     - target: {fileID: 8564474704944796432, guid: a374ebf54cf32e3458eaf8644ac8b2f8, type: 3}
       propertyPath: m_LocalPosition.z

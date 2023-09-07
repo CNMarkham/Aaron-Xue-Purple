@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         jumping = false;
 
-        
+
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         Jump();
 
         FlipDirection();
-       ChangeAnimations();
+        ChangeAnimations();
     }
     private void Jump()
     {
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider != null && Input.GetKeyDown(KeyCode.Space))
         {
 
-            Debug.Log("hi");   
+            Debug.Log("hi");
             Vector3 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
@@ -88,4 +88,30 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("inAir", hit.collider == null || jumping);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+
+
+        if (GetComponent<PlayerBehaviour>().big)
+        {
+            distance += 1f;
+            RaycastHit2D hitTop = Physics2D.CircleCast(rb.position, 0.25f, Vector2.up, distance, LayerMask.GetMask("Default"));
+        }
+        float distance = 0.375f;
+
+
+        if (GetComponent<PlayerBehaviour>().big)
+        {
+            distance += 1f;
+        }
+    }
+    
+
+        
+       
+        
+
 }
+
+
