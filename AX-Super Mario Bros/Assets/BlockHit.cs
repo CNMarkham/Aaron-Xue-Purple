@@ -14,11 +14,10 @@ public class BlockHit : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
     public void Hit()
-    {
-        if (maxHits == 0)
+    { 
+        if (maxHits <= 0)
         {
-            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            spriteRenderer.sprite = emptyBlock;
+            return;
         }
         if (item != null)
         {
@@ -26,10 +25,12 @@ public class BlockHit : MonoBehaviour
             animator.SetTrigger("hit");
             maxHits--;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
+        if (maxHits == 0)
+        {
+            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.sprite = emptyBlock;
+        }
         
     }
+    
 }
