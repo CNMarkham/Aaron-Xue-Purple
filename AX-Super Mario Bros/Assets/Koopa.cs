@@ -30,7 +30,7 @@ public class Koopa : MonoBehaviour
             }
             else
             {
-                GetComponent<Animator>().SetTrigger("shull");
+                GetComponent<Animator>().SetTrigger("shell");
                 GetComponent<EnemyMovement>().speed = 0;
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 shelled = true;

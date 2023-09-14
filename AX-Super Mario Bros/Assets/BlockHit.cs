@@ -22,6 +22,7 @@ public class BlockHit : MonoBehaviour
         if (item != null)
         {
             Instantiate(item, transform);
+            Debug.Log("anim " + animator);
             animator.SetTrigger("hit");
             maxHits--;
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2482227657131235981}
   - component: {fileID: 3977016858494523701}
   - component: {fileID: 2930467499564528845}
+  - component: {fileID: 7497213894099197507}
   m_Layer: 0
   m_Name: Goomba
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dfbef0ad2b6bf47bd9136bcff67bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &7497213894099197507
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4056047371339046321}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1758527fd2b3dd248bfb92cb143c7552, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
