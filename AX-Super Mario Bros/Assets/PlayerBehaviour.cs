@@ -51,7 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
         GetComponent<CapsuleCollider2D>().size = new Vector2(1f, 2f);
-        GetComponent<CapsuleCollider2D>().offset = new Vector2(0, 0.5f);
+        GetComponent<CapsuleCollider2D>().offset = new Vector2(0, 0.036282f);
 
 
         big = true;
@@ -76,8 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<CapsuleCollider>().enabled = true;
+        
 
         for (int i = 0; i < 8; i++)
         {
@@ -85,6 +84,11 @@ public class PlayerBehaviour : MonoBehaviour
             smallRenderer.enabled ^= true;
             yield return new WaitForSeconds(0.25f);
         }
+
+        rb.isKinematic = false;
+        rb.velocity = velocity;
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     // Update is called once per frame

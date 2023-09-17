@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7059108851318093555}
   - component: {fileID: 1355457127662009530}
   - component: {fileID: 520757974738173610}
-  - component: {fileID: 520757974738173609}
+  - component: {fileID: 152509507785558446}
   m_Layer: 7
   m_Name: Mario_Big_Idle
   m_TagString: Player
@@ -239,7 +239,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &520757974738173609
+--- !u!70 &152509507785558446
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

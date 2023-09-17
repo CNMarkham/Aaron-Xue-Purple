@@ -90,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
         float distance = 0.375f;
         if (GetComponent<PlayerBehaviour>().big)
         {

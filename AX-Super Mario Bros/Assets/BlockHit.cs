@@ -21,6 +21,7 @@ public class BlockHit : MonoBehaviour
         }
         if (item != null)
         {
+            Debug.Log(transform);
             Instantiate(item, transform);
             Debug.Log("anim " + animator);
             animator.SetTrigger("hit");

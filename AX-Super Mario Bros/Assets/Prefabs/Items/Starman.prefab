@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 397123738055330441}
   - component: {fileID: 397123738055330442}
   - component: {fileID: 397123738055330439}
+  - component: {fileID: -1330335424197224055}
   m_Layer: 0
   m_Name: Starman
   m_TagString: Untagged
@@ -136,3 +137,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc10dd392adf79146bbb3c22152df874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-1330335424197224055
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397123738055330444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ce86bcdb1f442b49a581fc2daec809a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
