@@ -64,7 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
         //it changes the collider size bigger because the small collider is too small for big mario
         GetComponent<CapsuleCollider2D>().size = new Vector2(1f, 2f);
         // it changes the offset because big mario will be in the ground
-        GetComponent<CapsuleCollider2D>().offset = new Vector2(0, 0.036282f);
+        GetComponent<CapsuleCollider2D>().offset = new Vector2(0, 0.5f);
 
         //it turned on big mario because the small mario touched a mushroom
         big = true;

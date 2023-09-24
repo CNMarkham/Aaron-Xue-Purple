@@ -6576,6 +6576,20 @@ MonoBehaviour:
   big: 0
   smallRenderer: {fileID: 1788687276}
   bigRenderer: {fileID: 743612163}
+--- !u!114 &1989446010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989446000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ce114a1be71364ab408e89a49f1cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2000
+  jumpForce: 9
 --- !u!1001 &1994246141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7494,6 +7508,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1463476879, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.495
+      objectReference: {fileID: 0}
     - target: {fileID: 1463476880, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7501,6 +7519,10 @@ PrefabInstance:
     - target: {fileID: 552478983609565313, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
       propertyPath: m_Name
       value: Mario_Big_Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355457127662009530, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1355457127662009530, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
       propertyPath: moveSpeed
@@ -7558,7 +7580,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1355457127662009530, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35129f6cfdd07dc4084222054e24e467, type: 3}
 --- !u!1001 &669979300649774723
 PrefabInstance:

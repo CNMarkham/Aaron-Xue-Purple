@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         jumping = false;
-
-
     }
 
     // Update is called once per frame
@@ -28,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.right * horizontal * moveSpeed * Time.deltaTime);
 
         Jump();
-
         FlipDirection();
         ChangeAnimations();
     }
@@ -45,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider != null && Input.GetKeyDown(KeyCode.Space))
         {
 
-            Debug.Log("hi");
             Vector3 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
@@ -111,15 +107,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-
-        
     }
-    
-
-        
-       
-        
-
 }
 
 
