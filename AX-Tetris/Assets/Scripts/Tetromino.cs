@@ -19,20 +19,25 @@ public class Tetromino : MonoBehaviour
 
             if (!ValidMove())
             {
-                ValidMove();
+                
+                transform.Translate(Vector2.left);
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.Translate(Vector2.left);
-
+         
+            if (!ValidMove())
+            {
+                transform.Translate(Vector2.right);
+            }
 
         }
         float tempTime = fallTime;
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            tempTime = tempTime / 2;
+            tempTime = tempTime / 10;
 
 
         }
@@ -40,22 +45,21 @@ public class Tetromino : MonoBehaviour
 
         if (Time.time - previousTime > tempTime)
         {
-
+            transform.Translate(Vector3.down);
+            previousTime = Time.time;
         }
 
 
 
     }
     public bool ValidMove()
-
-
     {
         foreach (Transform child in transform)
         {
             int x = Mathf.RoundToInt(child.transform.position.x);
             int y = Mathf.RoundToInt(child.transform.position.y);
 
-            if (x < 0 || y < 0 || x >= 0 || y >= 0)
+            if (x < 0 || y < 0 || x >= width || y >= height)
             {
                 return false;
             }
