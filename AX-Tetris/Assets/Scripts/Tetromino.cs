@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Tetromino : MonoBehaviour
 {
-
+    public Vector3 rotationPoint;
     public float fallTime = 0.8f;
     private float previousTime;
     public float speed;
     public static float width = 10;
     public static float height = 20;
     // Update is called once per frame
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.Translate(Vector2.up);
+
+            Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
+            transform.RotateAround(convertedPoint, Vector3.forward, 90);
+        }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Translate(Vector2.right);
@@ -47,10 +55,13 @@ public class Tetromino : MonoBehaviour
         {
             transform.Translate(Vector3.down);
             previousTime = Time.time;
+            if (!ValidMove())
+            {
+                transform.Translate(Vector2.up);
+            }
+
         }
-
-
-
+                  
     }
     public bool ValidMove()
     {
