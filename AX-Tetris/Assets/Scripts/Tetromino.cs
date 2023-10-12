@@ -8,12 +8,23 @@ public class Tetromino : MonoBehaviour
     public float fallTime = 0.8f;
     private float previousTime;
     public float speed;
-    public static float width = 10;
-    public static float height = 20;
+    public static int width = 10;
+    public static int height = 20;
+    public static Transform[,] grid = new Transform[width, height];
     // Update is called once per frame
+    public void AddToGrid()
+    {
+        foreach (Transform child in transform)
+        {
+            int x = Mathf.RoundToInt(child.transform.position.x);
+            int y = Mathf.RoundToInt(child.transform.position.y);
+            grid[x, y] = child;
+        }
 
+    }
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.Translate(Vector2.up);
@@ -29,6 +40,7 @@ public class Tetromino : MonoBehaviour
             {
                 
                 transform.Translate(Vector2.left);
+
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -38,6 +50,7 @@ public class Tetromino : MonoBehaviour
             if (!ValidMove())
             {
                 transform.Translate(Vector2.right);
+                
             }
 
         }
@@ -46,7 +59,7 @@ public class Tetromino : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             tempTime = tempTime / 10;
-
+           
 
         }
 
@@ -57,9 +70,13 @@ public class Tetromino : MonoBehaviour
             previousTime = Time.time;
             if (!ValidMove())
             {
-                transform.Translate(Vector2.up);
-            }
+                transform.position += Vector3.up;
+                this.enabled = false;
+                AddToGrid();
+                FindObjectOfType<Spawner>().SpawnTetromino();
+               
 
+            }
         }
                   
     }
@@ -69,13 +86,18 @@ public class Tetromino : MonoBehaviour
         {
             int x = Mathf.RoundToInt(child.transform.position.x);
             int y = Mathf.RoundToInt(child.transform.position.y);
-
+                     
             if (x < 0 || y < 0 || x >= width || y >= height)
+            {
+                return false;
+            }
+            Debug.Log(x + " " + y);
+            if (grid[x, y] != null)
             {
                 return false;
             }
         }
         return true;
         
-}
     }
+}
