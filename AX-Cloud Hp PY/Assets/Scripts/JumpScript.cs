@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class JumpScript : MonoBehaviour
 {
-
     // Start is called before the first frame update
     Rigidbody2D rigidbody;
-    float jumpForce = 20;
+    public float jumpForce = 10;
     public bool canJump;
     void Start()
     {
@@ -25,7 +24,7 @@ public class JumpScript : MonoBehaviour
         }
         else
         {
-            canJump = false; 
+            canJump = false;
         }
 
         if (canJump && Input.GetButtonDown("Jump"))
