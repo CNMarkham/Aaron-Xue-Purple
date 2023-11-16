@@ -5,9 +5,8 @@ using UnityEngine;
 public class TurretLook : MonoBehaviour
 {
     public Transform player;
-    private LaserSwitch laserSwitch;
     private GameObject laser;
-
+    private LaserSwitch laserSwitch;
     private void Start()
     {
         laserSwitch = GameObject.Find("LaserSwitch").GetComponent<LaserSwitch>();
@@ -16,6 +15,11 @@ public class TurretLook : MonoBehaviour
 
     void Update() 
     {
+        if (laserSwitch.lasersAreOff)
+        {
+            laser.SetActive(false);
+            return;
+        }
         transform.LookAt(player);
     }
 }
