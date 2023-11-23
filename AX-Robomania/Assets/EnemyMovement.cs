@@ -4,24 +4,57 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public float xForce;
+    public float yForce;
+    public float xDirection;
+    private Rigidbody2D enemyRigidBody;
 
-
-
-    public float speed;
     // Start is called before the first frame update
-    void Start()
+    // 
+    
+    private void Start()
     {
-        
+        enemyRigidBody = GetComponent<Rigidbody2D>();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            Vector2 jumpForce = new Vector2(xForce * xDirection, yForce);
+            enemyRigidBody.AddForce(jumpForce);         
+
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 3000);
+            
+        }
+
     }
     private void FixedUpdate()
     {
-        float newXPosition = transform.position.x + speed * Time.deltaTime;
-        float newYPosition = transform.position.y;
-        Vector2 newPosition = new Vector2(newXPosition, newYPosition);
+
+        if (transform.position.y >= 4)
+        {
+            enemyRigidBody.AddForce(Vector2.down * yForce);
+
+        }
+        if (transform.position.x <= -7)
+        {
+            xForce = 1;
+            enemyRigidBody.AddForce(Vector2.right * xForce);
+        }
+        if (transform.position.x >= 7)
+        {
+            xForce = -1;
+            enemyRigidBody.AddForce(Vector2.left * xForce);
+        }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
 }
+    
+
+ 
+
