@@ -8,7 +8,7 @@ public class EnemyControls : MonoBehaviour
     private Rigidbody rigidbodyEnemy;
     private Transform target;
     public bool isFollowingTarget;
-    private bool isAttackingTarget;
+    public bool isAttackingTarget;
     private float chasingPlayer = 0.01f;
     public float currentAttackingTime;
     public float maxAttackingTime = 2f;
@@ -25,6 +25,43 @@ public class EnemyControls : MonoBehaviour
         rigidbodyEnemy = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
+    void Attack()
+    {
+       
+        if (!isAttackingTarget)
+        {
+            return;
+        }
+
+        currentAttackingTime += Time.deltaTime;
+         
+        if(currentAttackingTime > maxAttackingTime)
+        {
+            EnemyAttack(Random.Range(1, 4));
+            currentAttackingTime = 0f;
+          
+        }
+        if(Vector3.Distance(transform.position, target.position) > attackingDistance + chasingPlayer)
+        {
+            isAttackingTarget = false;
+            isFollowingTarget = true;
+        }
+    }
+    public void EnemyAttack(int attack)
+    {
+        if(attack == 1)
+        {
+            animatorEnemy.SetTrigger("Attack1");
+        }
+        if (attack == 2)
+        {
+            animatorEnemy.SetTrigger("Attack2");
+        }
+        if (attack == 3)
+        {
+            animatorEnemy.SetTrigger("Attack3");
+        }
+    }
     void FollowTarget()
     {
         if (!isFollowingTarget)
@@ -33,15 +70,27 @@ public class EnemyControls : MonoBehaviour
         }
         if(Vector3.Distance(transform.position, target.position) >= attackingDistance)
         {
-            direction = target.position;
+            direction = target.position - transform.position;
             direction.y = 0;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 20);
-
-            rigidbodyEnemy.velocity = transform.forward * speed;
-            animatorEnemy.SetBool("Walk", true);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 100);
+            if (rigidbodyEnemy.velocity.sqrMagnitude != 0)
+            {
+                rigidbodyEnemy.velocity = transform.forward * speed;
+                animatorEnemy.SetBool("Walk", false);
+            }
+           
+        }
+        else if (Vector3.Distance(transform.position, target.position) <= attackingDistance)
+        {
+            rigidbodyEnemy.velocity = Vector3.zero;
+            animatorEnemy.SetBool("Walk", false);
+            isFollowingTarget = false;
+            isAttackingTarget = true;
         }
     }
+   
+
     private void FixedUpdate()
     {
         FollowTarget();
@@ -49,6 +98,6 @@ public class EnemyControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Attack();
     }
 }
