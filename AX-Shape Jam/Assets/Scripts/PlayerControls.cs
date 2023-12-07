@@ -82,7 +82,18 @@ public class PlayerControls : MonoBehaviour
             /*****************************\
             |**** Add your code below ****|
             \*****************************/
-
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 4)
+            {
+                Vector3 upOffset = new Vector3(-0.2f, 0.2f, 0);
+                Vector3 downOffset = new Vector3(0.2f, 0, 0);
+                Vector3 leftOffset = new Vector3(-0.2f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.2f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
 
             /*****************************\
             |**** Add your code above ****|
