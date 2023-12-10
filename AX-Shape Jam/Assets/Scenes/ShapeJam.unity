@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cf4ba8823c344e82dd33ba4fbda7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: 1000
+  dropRate: 3
   powerup: {fileID: 4162120885345970529, guid: 85eeb906d7d599c43b075b680a4b416b, type: 3}
   powerupEmitter: {fileID: 247519636}
 --- !u!4 &247519638
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1057183781
 Canvas:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 3632139631492857891, guid: 9cd2235cef406814b9970102f2f41555, type: 3}
-  spawnRate: 5
+  spawnRate: 4
 --- !u!4 &1353465360
 Transform:
   m_ObjectHideFlags: 0

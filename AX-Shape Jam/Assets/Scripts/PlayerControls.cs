@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
     public float fireRate;
     public int currentLevel;
     private float nextFire;
-    
+
     // playerHealth and score are specifically for the corresponding text objects, 
     //gameOver is used as a null condition
     public int playerHealth;
@@ -33,7 +33,8 @@ public class PlayerControls : MonoBehaviour
 
     private Rigidbody myRigidBody;
 
-    void Start() {
+    void Start()
+    {
         // currentLevel and score are initialized with values on Awake
         currentLevel = 1;
         score = 0;
@@ -48,18 +49,19 @@ public class PlayerControls : MonoBehaviour
         // according to moveDirection and clamp the pos using info from Boundaries
         // as long as the game is running, the player can move
         moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (!gameOver) {
+        if (!gameOver)
+        {
             myRigidBody.velocity = moveDirection * speed;
         }
-        myRigidBody.position = new Vector2 (
+        myRigidBody.position = new Vector2(
             Mathf.Clamp(
-                myRigidBody.position.x, 
-                boundary.leftBorder, 
+                myRigidBody.position.x,
+                boundary.leftBorder,
                 boundary.rightBorder
                 ),
             Mathf.Clamp(
-                myRigidBody.position.y, 
-                boundary.bottomBorder, 
+                myRigidBody.position.y,
+                boundary.bottomBorder,
                 boundary.topBorder
                 )
         );
@@ -74,8 +76,8 @@ public class PlayerControls : MonoBehaviour
         // While the game is running, 
         // if the player presses space or z, 
         // and you can fire
-        
-        if ((Input.GetKey("space") || Input.GetKey("z")) && (Time.time > nextFire)) 
+
+        if ((Input.GetKey("space") || Input.GetKey("z")) && (Time.time > nextFire))
         {
             nextFire = Time.time + fireRate;
 
@@ -94,7 +96,41 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 5)
+            {
+                Vector3 upOffset = new Vector3(-0.2f, 0.2f, 0);
+                Vector3 downOffset = new Vector3(0.2f, 0.4f, 0);
+                Vector3 leftOffset = new Vector3(-0.2f, 0.6f, 0);
+                Vector3 rightOffset = new Vector3(0.2f, 0.8f, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 6)
+            {
+                Vector3 upOffset = new Vector3(0, 0, 0);
+                Vector3 downOffset = new Vector3(0, 0, 0);
+                Vector3 leftOffset = new Vector3(-0.2f, 0.6f, 0);
+                Vector3 rightOffset = new Vector3(0.2f, 0.6f, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+            if (currentLevel >= 3)
+            {
+                Vector3 upOffset = new Vector3(0, 0, 0);
+                Vector3 downOffset = new Vector3(0, 0, 0);
+                Vector3 leftOffset = new Vector3(0.1f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.2f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
             /*****************************\
             |**** Add your code above ****|
             \*****************************/
@@ -104,7 +140,8 @@ public class PlayerControls : MonoBehaviour
         // If the playerHealth is reduced to 0, 
         // the gameOver bool is set to true, 
         // having various effects across multiple scripts
-        if (playerHealth <= 0) {
+        if (playerHealth <= 0)
+        {
             gameOver = true;
         }
     }

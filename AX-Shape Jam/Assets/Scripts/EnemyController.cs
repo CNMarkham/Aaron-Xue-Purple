@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
     public Vector3 EnemyVelocity;
     private PlayerControls playerController;
     private Rigidbody myRigidBody;
+   
 
     void Start() 
     {
