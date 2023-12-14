@@ -13,7 +13,8 @@ public class EnemyEmitterController : MonoBehaviour
     private PlayerControls playerController;
     public float spawnRate;
     private float nextSpawn = 5.0f;
-
+    public GameObject projectile;
+    public int currentLevel;
     void Start()
     {
         // player is set to the GameObject in the scene, "Player"
@@ -41,7 +42,19 @@ public class EnemyEmitterController : MonoBehaviour
                 float randomX = Random.Range(-6.0f, 6.0f);
                 Vector3 enemyPosition = new Vector3(randomX, 6, 0);
                 transform.position = enemyPosition;
-                Instantiate(Enemy, transform.position, transform.rotation);
+                Instantiate(Enemy, transform.position, transform.rotation); 
+                if (currentLevel >= 2)
+                {
+                    Vector3 upOffset = new Vector3(0, 0, 0);
+                    Vector3 downOffset = new Vector3(0.1f, 0, 0);
+                    Vector3 leftOffset = new Vector3(0.1f, 0, 0);
+                    Vector3 rightOffset = new Vector3(0, 0, 0);
+                    Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                    Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                    Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                    Instantiate(projectile, transform.position + upOffset, transform.rotation);
+                }
+            }
             }
 
 
@@ -50,5 +63,5 @@ public class EnemyEmitterController : MonoBehaviour
             \*****************************/
         }
     }
-}
+
             

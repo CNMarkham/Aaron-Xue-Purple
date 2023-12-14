@@ -85,7 +85,7 @@ public class PlayerControls : MonoBehaviour
             |**** Add your code below ****|
             \*****************************/
             Instantiate(projectile, transform.position, transform.rotation);
-            if (currentLevel >= 4)
+            if (currentLevel == 4)
             {
                 Vector3 upOffset = new Vector3(-0.2f, 0.2f, 0);
                 Vector3 downOffset = new Vector3(0.2f, 0, 0);
@@ -99,14 +99,14 @@ public class PlayerControls : MonoBehaviour
             Instantiate(projectile, transform.position, transform.rotation);
             if (currentLevel >= 5)
             {
-                Vector3 upOffset = new Vector3(-0.2f, 0.2f, 0);
-                Vector3 downOffset = new Vector3(0.2f, 0.4f, 0);
-                Vector3 leftOffset = new Vector3(-0.2f, 0.6f, 0);
-                Vector3 rightOffset = new Vector3(0.2f, 0.8f, 0);
-                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
-                Instantiate(projectile, transform.position + downOffset, transform.rotation);
-                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+                Vector3 Offset1 = new Vector3(-0.2f, 0.2f, 0);
+                Vector3 Offset2 = new Vector3(-0.2f, -0.2f, 0);
+                Vector3 Offset3 = new Vector3(0.2f, 0.2f, 0);
+                Vector3 Offset4 = new Vector3(0.2f, -0.2f, 0);
+                Instantiate(projectile, transform.position + Offset4, transform.rotation);
+                Instantiate(projectile, transform.position + Offset3, transform.rotation);
+                Instantiate(projectile, transform.position + Offset2, transform.rotation);
+                Instantiate(projectile, transform.position + Offset1, transform.rotation);
             }
             Instantiate(projectile, transform.position, transform.rotation);
             if (currentLevel >= 6)
@@ -131,12 +131,54 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            /*****************************\
-            |**** Add your code above ****|
-            \*****************************/
-        }
-
-
+            if (currentLevel >= 7)
+            {
+                Vector3 upOffset = new Vector3(0.3f, 0, 0);
+                Vector3 downOffset = new Vector3(0, 0, 0);
+                Vector3 leftOffset = new Vector3(0.1f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.4f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+            if (currentLevel >= 8)
+            {
+                Vector3 upOffset = new Vector3(0.5f, 0, 0);
+                Vector3 downOffset = new Vector3(0.3f, 0, 0);
+                Vector3 leftOffset = new Vector3(0.4f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.4f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+            if (currentLevel >= 9)
+            {
+                Vector3 upOffset = new Vector3(0.6f, 0, 0);
+                Vector3 downOffset = new Vector3(0.5f, 0, 0);
+                Vector3 leftOffset = new Vector3(0.4f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.3f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+            if (currentLevel >= 10)
+            {
+                Vector3 upOffset = new Vector3(0.5f, 0, 0);
+                Vector3 downOffset = new Vector3(0.5f, 0, 0);
+                Vector3 leftOffset = new Vector3(0.5f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.5f, 0, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + downOffset, transform.rotation);
+                Instantiate(projectile, transform.position + upOffset, transform.rotation);
+            }
+           }
+        /*****************************\
+        |**** Add your code above ****|
+        \*****************************/
         // If the playerHealth is reduced to 0, 
         // the gameOver bool is set to true, 
         // having various effects across multiple scripts
@@ -145,6 +187,11 @@ public class PlayerControls : MonoBehaviour
             gameOver = true;
         }
     }
+
+
+        
+    
+
 
     void OnTriggerEnter(Collider other)
     {
