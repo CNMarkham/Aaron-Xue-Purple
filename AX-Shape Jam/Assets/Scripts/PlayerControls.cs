@@ -97,7 +97,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
             Instantiate(projectile, transform.position, transform.rotation);
-            if (currentLevel >= 5)
+            if (currentLevel == 5)
             {
                 Vector3 Offset1 = new Vector3(-0.2f, 0.2f, 0);
                 Vector3 Offset2 = new Vector3(-0.2f, -0.2f, 0);
@@ -109,7 +109,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + Offset1, transform.rotation);
             }
             Instantiate(projectile, transform.position, transform.rotation);
-            if (currentLevel >= 6)
+            if (currentLevel == 6)
             {
                 Vector3 upOffset = new Vector3(0, 0, 0);
                 Vector3 downOffset = new Vector3(0, 0, 0);
@@ -120,9 +120,9 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            if (currentLevel >= 3)
+            if (currentLevel == 3)
             {
-                Vector3 upOffset = new Vector3(0, 0, 0);
+                Vector3 upOffset = new Vector3(0, 0,0);
                 Vector3 downOffset = new Vector3(0, 0, 0);
                 Vector3 leftOffset = new Vector3(0.1f, 0, 0);
                 Vector3 rightOffset = new Vector3(0.2f, 0, 0);
@@ -131,7 +131,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            if (currentLevel >= 7)
+            if (currentLevel == 7)
             {
                 Vector3 upOffset = new Vector3(0.3f, 0, 0);
                 Vector3 downOffset = new Vector3(0, 0, 0);
@@ -142,7 +142,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            if (currentLevel >= 8)
+            if (currentLevel == 8)
             {
                 Vector3 upOffset = new Vector3(0.5f, 0, 0);
                 Vector3 downOffset = new Vector3(0.3f, 0, 0);
@@ -153,7 +153,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            if (currentLevel >= 9)
+            if (currentLevel == 9)
             {
                 Vector3 upOffset = new Vector3(0.6f, 0, 0);
                 Vector3 downOffset = new Vector3(0.5f, 0, 0);
@@ -164,7 +164,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-            if (currentLevel >= 10)
+            if (currentLevel == 10)
             {
                 Vector3 upOffset = new Vector3(0.5f, 0, 0);
                 Vector3 downOffset = new Vector3(0.5f, 0, 0);
@@ -175,7 +175,7 @@ public class PlayerControls : MonoBehaviour
                 Instantiate(projectile, transform.position + downOffset, transform.rotation);
                 Instantiate(projectile, transform.position + upOffset, transform.rotation);
             }
-           }
+        }
         /*****************************\
         |**** Add your code above ****|
         \*****************************/

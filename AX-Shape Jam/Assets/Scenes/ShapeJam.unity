@@ -1171,6 +1171,7 @@ MonoBehaviour:
   spawnRate: 6
   projectile: {fileID: 0}
   currentLevel: 0
+  GiantEnemy: {fileID: 0}
 --- !u!4 &1353465360
 Transform:
   m_ObjectHideFlags: 0
