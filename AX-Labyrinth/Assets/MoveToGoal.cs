@@ -17,7 +17,15 @@ public class MoveToGoal : MonoBehaviour
         agent.destination = key.transform.position;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {
+            agent.destination = goal.transform.position;
+            Destroy(other.gameObject);
+        }
 
+    }
     // Update is called once per frame
     private void Update()
     {
