@@ -22,8 +22,8 @@ public class ComboAttacks : MonoBehaviour
         {
             NumberOfButtonsPressed = 0;
         }
-
-        if (Input.GetKeyDown(KeyCode.Z))
+        //Input.GetKeyDown(KeyCode.Z)
+        if (Input.GetButtonDown("Fire1"))
         {
             lastButtonPressed = Time.time;
             NumberOfButtonsPressed++;

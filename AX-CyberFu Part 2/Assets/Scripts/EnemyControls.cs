@@ -6,7 +6,7 @@ public class EnemyControls : MonoBehaviour
 {
     public float speed = 5f;
     public float attackingDistance = 1f;
-
+                                                                                                                                                                                               
     private Animator anim;
     private Rigidbody rb;
     private Transform target;

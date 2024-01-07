@@ -13,7 +13,7 @@ public class HealthLoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, Time.deltaTime * 50, 0));
+        transform.Rotate(new Vector3(0, Time.deltaTime * 5, 0));
     }
 
     public void OnTriggerEnter(Collider other)
@@ -21,9 +21,9 @@ public class HealthLoot : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerHealth ph = other.GetComponent<PlayerHealth>();
-            if (ph.currentPlayerHealth < 10)
+            if (ph.currentPlayerHealth < 30)
             {
-                ph.currentPlayerHealth += 1;
+                ph.currentPlayerHealth += 4;
             }
         }
         Destroy(this.gameObject);
