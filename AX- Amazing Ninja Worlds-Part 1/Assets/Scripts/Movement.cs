@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        //float vertical = Input.GetAxis("Vertical");
 
 
             //Rigidbody rigidBody;
@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
             //}
 
 
-        Vector3 movement = new Vector3(horizontal, vertical);
+        Vector3 movement = new Vector3(horizontal, 0);
 
         transform.position += movement * Time.deltaTime * speed;
     }

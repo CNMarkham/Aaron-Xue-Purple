@@ -9,5 +9,6 @@ public class Hazard : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         background.GetComponent<GameManager>().moveToCheckPoint();
+        HealthBar.GetComponent<LifeHUD>().HurtPlayer();
     }
 }

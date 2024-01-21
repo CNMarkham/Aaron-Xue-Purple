@@ -23,7 +23,8 @@ public class PickUpKey : MonoBehaviour
         allParticles.Play();
         //HealthBar.GetComponent<LifeHUD>().HealPlayer();
         //Debug.Log("Hit!");
-        HealthBar();
+        HealthBar.GetComponent<LifeHUD>().HealPlayer();
+        Destroy(gameObject);
     }
 
 }

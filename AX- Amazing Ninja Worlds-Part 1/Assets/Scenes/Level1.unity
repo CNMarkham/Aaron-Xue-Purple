@@ -1480,6 +1480,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6715611}
+  - {fileID: 1822619294}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2169,7 +2170,6 @@ Transform:
   m_Children:
   - {fileID: 1758759384}
   - {fileID: 365266794849478841}
-  - {fileID: 1822619294}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2212,7 +2212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.1, y: -3}
+  m_AnchoredPosition: {x: -22.7, y: -2.6}
   m_SizeDelta: {x: 149.9485, y: 117.1698}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1544849492
@@ -2424,7 +2424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621597827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.521673, y: 7.5038776, z: -42.2}
+  m_LocalPosition: {x: 10.503639, y: 7.5038776, z: -42.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2871,20 +2871,20 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822619293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.188817}
-  m_LocalScale: {x: 3.2655, y: 1.0885, z: 1.0885}
+  m_LocalPosition: {x: 0, y: 0, z: -3.7702575}
+  m_LocalScale: {x: 2.372752, y: 0.79091734, z: 0.79091734}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1993109838}
   - {fileID: 1529329621}
   - {fileID: 1621052773}
   - {fileID: 1709836889}
-  m_Father: {fileID: 1398894493}
-  m_RootOrder: 2
+  m_Father: {fileID: 1081138199}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 58.90706, y: 333.93787}
+  m_AnchoredPosition: {x: 103.77557, y: -31.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822619295
@@ -3624,6 +3624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1950872979, guid: b32bd5e0a44542f40b06626d0f879530, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2033886546264645911, guid: b32bd5e0a44542f40b06626d0f879530, type: 3}
       propertyPath: m_Name
       value: Codey Variant
@@ -3850,7 +3854,7 @@ PrefabInstance:
     - target: {fileID: 748992279688134216, guid: 050efd230c4094246b4f2c6039b362e7, type: 3}
       propertyPath: HealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1822619293}
     - target: {fileID: 748992279688134216, guid: 050efd230c4094246b4f2c6039b362e7, type: 3}
       propertyPath: allParticles
       value: 
