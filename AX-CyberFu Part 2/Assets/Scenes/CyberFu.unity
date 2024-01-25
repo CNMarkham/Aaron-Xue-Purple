@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17277962, g: 0.21590714, b: 0.297843, a: 1}
+  m_IndirectSpecularColor: {r: 0.1727793, g: 0.21590643, b: 0.29784188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5d7d971019f4449a31b30891cf6841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayerHealth: 30
+  currentPlayerHealth: 40
   enemyDamage: 4
   particles: {fileID: 0}
 --- !u!1 &1195994594
