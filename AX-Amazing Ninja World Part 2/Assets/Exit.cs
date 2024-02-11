@@ -11,6 +11,7 @@ public class Exit : MonoBehaviour
     {
         if (gem.activeInHierarchy == false)
         {
+            Debug.Log($"Teleporting to {teleportDestination}");
             background.GetComponent<GameManager>().TeleportOpen(teleportDestination);
         }
      
